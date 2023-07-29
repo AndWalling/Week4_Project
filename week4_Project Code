@@ -1,0 +1,131 @@
+package com.PromineoTech;
+
+public class Application {
+
+	public static void main(String[] args) {
+	// 1.
+		int[] ages = new int[8];
+	ages[0] = 3;
+	ages[1] = 9;
+	ages[2] = 23;
+	ages[3] = 64;
+	ages[4] = 2;
+	ages[5] = 8;
+	ages[6] = 28;
+	ages[7] = 93;
+	ages[ages.length - 1] -= ages[0];
+	System.out.println(ages[ages.length - 1]);
+	
+	int[] newAges = {3, 9, 23, 64, 2, 8, 28, 93, 85};
+	System.out.println(newAges[newAges.length - 1] - newAges[0]);
+	
+	int averageAge = 0;
+	for (int i = 0; i <= (ages.length - 1); i++) {
+		averageAge += ages[i];
+	}
+	System.out.println(averageAge = averageAge / ages.length);
+	
+	// 2.
+	String[] names = {"Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"};
+	String nameList = "";
+	int nameAverage = 0;
+	for (int i = 0; i <= (names.length - 1); i++) {
+		nameAverage += names[i].length();
+		nameList += (names[i] + " ");
+	}
+	nameAverage = nameAverage / names.length;
+	System.out.println(nameAverage);
+	System.out.println(nameList);
+	
+	// 3. array[array.length]
+	// 4. array[0]
+	// 5.
+	int[] nameLengths = new int[6];
+	for (int i = 0; i <= (nameLengths.length - 1); i++) {
+		nameLengths[i] = names[i].length();
+	}
+	// 6. 
+	int lengthSum = 0;
+	for (int i = 0; i <= (nameLengths.length - 1); i++) {
+		lengthSum += nameLengths[i];
+	}
+	System.out.println(lengthSum);
+	
+	// These print statements test some of the below methods.
+	System.out.println(copyWord("Hello", 3));
+	System.out.println(returnFullName("Tony", "Stark"));
+	System.out.println(isGreaterThan100(ages));
+	System.out.println(howManyLetters(names));
+	}
+	// 7.
+	
+	public static String copyWord(String word, int n) {
+		String stringResult = "";	
+		for (int i = 0; i < n; i++) {
+				stringResult += (word + " ");
+			}
+			return stringResult;
+			
+	}
+	// 8.
+	public static String returnFullName(String firstName, String lastName) {
+		String fullName = firstName + " " + lastName;
+		return fullName;
+	}
+	// 9.
+	public static boolean isGreaterThan100(int[] numbers) {
+		int intSum = 0;
+		for (int i = 0; i <= (numbers.length - 1); i++) {
+			intSum += numbers[i];
+		}
+		if (intSum >= 100) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	// 10. 
+	public static double arrayAverage(double[] newArray) {
+		double returnAverage = 0;
+		for (int i = 0; i <= (newArray.length - 1); i++) {
+			returnAverage += newArray[i];
+		}
+		returnAverage = returnAverage / newArray.length;
+		return returnAverage;
+	}
+	// 11.
+	public static boolean higherAverage(double[] firstArray, double[] secondArray) {
+		double firstAverage = 0;
+		double secondAverage = 0;
+		for (int i = 0; i <= (firstArray.length - 1); i++) {
+			firstAverage += firstArray[i];
+		}
+		for (int i = 0; i <= (secondArray.length - 1); i++) {
+			secondAverage += secondArray[i];
+		}
+		firstAverage = firstAverage / firstArray.length;
+		secondAverage = secondAverage / secondArray.length;
+		if (firstAverage > secondAverage) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	// 12.
+	public static boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) {
+		if (isHotOutside && moneyInPocket > 10.50) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	// 13. This method takes an array of String and returns the number of letters in the array.
+	// I made this method to help determine the size of a String Array.
+	public static int howManyLetters(String[] wordArray) {
+		int numberTotal = 0;
+		for (int i = 0; i <= (wordArray.length - 1); i++) {
+			numberTotal += wordArray[i].length();
+		}
+		return numberTotal;
+	}
+}
